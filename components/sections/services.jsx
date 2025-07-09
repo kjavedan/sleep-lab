@@ -68,7 +68,7 @@ export function Services() {
           {services.map((service, index) => (
             <Card
               key={service.id}
-              className={`group hover:scale-105 transition-all duration-300 ${
+              className={`group transition-all duration-300 ${
                 index === 2 ? "md:col-span-2 xl:col-span-1" : ""
               } ${index >= 3 ? "md:col-span-1 xl:col-span-1" : ""}`}
             >
