@@ -25,14 +25,14 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-background pt-20 lg:pt-32"
+      className="relative min-h-screen flex items-center bg-background pt-16 lg:pt-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-20 py-20 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left space-y-8 lg:space-y-12 order-2 lg:order-1">
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl xl:text-[100px] font-heading font-extrabold leading-tight text-foreground">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-heading font-extrabold leading-tight text-foreground">
                 Better sleep
                 <br />
                 better life
