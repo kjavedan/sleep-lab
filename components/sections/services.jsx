@@ -58,8 +58,8 @@ export function Services() {
   return (
     <section id="services" className="py-20 lg:py-32 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
-        <div className="text-center mb-16 lg:mb-24">
-          <h2 className="text-4xl sm:text-6xl lg:text-8xl font-heading font-bold text-foreground mb-6">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
             Services
           </h2>
         </div>
@@ -73,7 +73,7 @@ export function Services() {
               } ${index >= 3 ? "md:col-span-1 xl:col-span-1" : ""}`}
             >
               <CardHeader className="p-0">
-                <div className="relative w-full h-64 lg:h-72 overflow-hidden rounded-t-3xl">
+                <div className="relative w-full h-48 lg:h-56 overflow-hidden rounded-t-2xl">
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 to-muted/20 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto mb-4 rounded-full bg-primary/30 flex items-center justify-center">
@@ -93,16 +93,16 @@ export function Services() {
                 </div>
               </CardHeader>
 
-              <CardContent className="p-6">
-                <CardTitle className="mb-4 text-xl lg:text-2xl">
+              <CardContent className="p-4">
+                <CardTitle className="mb-3 text-lg lg:text-xl line-clamp-2">
                   {service.title}
                 </CardTitle>
-                <CardDescription className="text-base leading-relaxed">
+                <CardDescription className="text-sm lg:text-base leading-relaxed line-clamp-3">
                   {service.description}
                 </CardDescription>
               </CardContent>
 
-              <CardFooter className="p-6 pt-0">
+              <CardFooter className="p-4 pt-0">
                 <Button
                   size="sm"
                   className="w-full"
