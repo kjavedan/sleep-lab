@@ -4,7 +4,7 @@ export function Card({ className, ...props }) {
   return (
     <div
       className={cn(
-        "rounded-3xl bg-card border border-border p-6 shadow-lg transition-all hover:shadow-xl cursor-pointer",
+        "rounded-2xl bg-card border border-border p-4 shadow-lg transition-all hover:shadow-xl cursor-pointer min-w-80",
         className,
       )}
       {...props}
@@ -40,9 +40,9 @@ export function CardDescription({ className, ...props }) {
 }
 
 export function CardContent({ className, ...props }) {
-  return <div className={cn("pt-6", className)} {...props} />;
+  return <div className={cn("pt-3", className)} {...props} />;
 }
 
 export function CardFooter({ className, ...props }) {
-  return <div className={cn("flex items-center pt-6", className)} {...props} />;
+  return <div className={cn("flex items-center pt-3", className)} {...props} />;
 }
