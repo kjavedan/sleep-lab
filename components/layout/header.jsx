@@ -29,7 +29,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
-        <div className="flex h-20 lg:h-32 items-center justify-between">
+        <div className="flex h-16 lg:h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <div className="w-12 h-12 lg:w-20 lg:h-20 bg-primary rounded-full flex items-center justify-center">
@@ -53,17 +53,17 @@ export function Header() {
           </nav>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden relative z-50">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-foreground"
+              className="text-foreground relative z-50"
             >
               {mobileMenuOpen ? (
-                <X className="h-8 w-8" />
+                <X className="h-6 w-6" />
               ) : (
-                <Menu className="h-8 w-8" />
+                <Menu className="h-6 w-6" />
               )}
               <span className="sr-only">Toggle navigation</span>
             </Button>
@@ -71,21 +71,44 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Circular Full Screen */}
       <div
         className={cn(
-          "lg:hidden fixed inset-x-0 top-20 bg-background border-b border-border transition-all duration-300 ease-in-out",
+          "lg:hidden fixed inset-0 z-40 transition-all duration-500 ease-in-out",
           mobileMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full pointer-events-none",
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none",
         )}
       >
-        <div className="px-6 py-6 space-y-6">
-          {navigation.map((item) => (
+        {/* Circular background */}
+        <div
+          className={cn(
+            "absolute top-4 right-6 w-12 h-12 bg-primary rounded-full transition-all duration-500 ease-in-out",
+            mobileMenuOpen ? "scale-[100] transform-gpu" : "scale-0",
+          )}
+        />
+
+        {/* Menu content */}
+        <div
+          className={cn(
+            "relative z-10 flex flex-col items-center justify-center h-full space-y-8 transition-all duration-700 ease-in-out delay-200",
+            mobileMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4",
+          )}
+        >
+          {navigation.map((item, index) => (
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="block w-full text-left text-xl font-body text-foreground hover:text-primary transition-colors py-2"
+              className={cn(
+                "text-3xl font-heading font-bold text-primary-foreground hover:text-primary-foreground/80 transition-all duration-300",
+                mobileMenuOpen ? "animate-in slide-in-from-bottom-4" : "",
+              )}
+              style={{
+                animationDelay: `${index * 100 + 400}ms`,
+                animationFillMode: "both",
+              }}
             >
               {item.name}
             </button>
