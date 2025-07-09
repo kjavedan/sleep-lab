@@ -44,8 +44,8 @@ export function Hero() {
             </div>
             <Button
               onClick={scrollToServices}
-              size="lg"
-              className="text-2xl lg:text-3xl px-12 py-6 lg:px-16 lg:py-8"
+              size="default"
+              className="text-lg lg:text-xl"
             >
               Start Now
             </Button>
