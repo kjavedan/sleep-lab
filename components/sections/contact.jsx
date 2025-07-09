@@ -32,7 +32,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-4">
               Contact Me
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
