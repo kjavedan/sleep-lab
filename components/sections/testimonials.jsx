@@ -1,6 +1,7 @@
 "use client";
 
 import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { ScrollNavigation } from "@/components/ui/scroll-navigation";
 
 const testimonials = [
   {
@@ -41,28 +42,15 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-16 lg:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-3">
             Testimonials
           </h2>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-8">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard
-              key={testimonial.id}
-              rating={testimonial.rating}
-              content={testimonial.content}
-              author={testimonial.author}
-              title={testimonial.title}
-            />
-          ))}
-        </div>
-
-        {/* Mobile/Tablet Horizontal Scroll */}
-        <div className="lg:hidden">
-          <div className="flex gap-6 overflow-x-auto pb-6 horizontal-scroll no-scrollbar snap-x snap-mandatory">
+        {/* Horizontal Scroll for All Screen Sizes */}
+        <ScrollNavigation scrollAmount={400}>
+          <div className="flex gap-4 lg:gap-6 overflow-x-auto pb-6 no-scrollbar">
             {testimonials.map((testimonial) => (
               <TestimonialCard
                 key={testimonial.id}
@@ -70,20 +58,11 @@ export function Testimonials() {
                 content={testimonial.content}
                 author={testimonial.author}
                 title={testimonial.title}
-                className="flex-shrink-0 w-80 sm:w-96 snap-center"
+                className="flex-shrink-0 w-80 lg:w-96"
               />
             ))}
           </div>
-
-          {/* Scroll indicator */}
-          <div className="flex justify-center mt-4">
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <div key={index} className="w-2 h-2 rounded-full bg-muted" />
-              ))}
-            </div>
-          </div>
-        </div>
+        </ScrollNavigation>
       </div>
     </section>
   );
