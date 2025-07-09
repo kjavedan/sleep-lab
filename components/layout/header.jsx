@@ -83,7 +83,7 @@ export function Header() {
         {/* Circular background */}
         <div
           className={cn(
-            "absolute top-4 right-6 w-12 h-12 bg-primary rounded-full transition-all duration-500 ease-in-out",
+            "absolute top-4 right-6 w-12 h-12 bg-card rounded-full transition-all duration-500 ease-in-out",
             mobileMenuOpen ? "scale-[100] transform-gpu" : "scale-0",
           )}
         />
@@ -91,7 +91,7 @@ export function Header() {
         {/* Menu content */}
         <div
           className={cn(
-            "relative z-10 flex flex-col items-center justify-center h-full space-y-8 transition-all duration-700 ease-in-out delay-200",
+            "relative z-50 flex flex-col items-center justify-center h-full space-y-8 transition-all duration-700 ease-in-out delay-200",
             mobileMenuOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4",
@@ -102,7 +102,7 @@ export function Header() {
               key={item.name}
               onClick={() => scrollToSection(item.href)}
               className={cn(
-                "text-3xl font-heading font-bold text-primary-foreground hover:text-primary-foreground/80 transition-all duration-300",
+                "text-3xl font-heading font-bold text-foreground hover:text-primary transition-all duration-300",
                 mobileMenuOpen ? "animate-in slide-in-from-bottom-4" : "",
               )}
               style={{
