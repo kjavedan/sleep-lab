@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;600;700;800&family=Lato:wght@400;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -101,8 +100,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
-    font-family: "Lato", sans-serif;
+    @apply bg-background text-foreground;
+    font-family: var(--font-body), sans-serif;
   }
 
   h1,
@@ -111,7 +110,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Playpen Sans", cursive;
+    font-family: var(--font-heading), cursive;
     font-weight: 700;
   }
 
