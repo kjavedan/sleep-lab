@@ -1,11 +1,13 @@
-import { RippleButton } from "@/components/animate-ui/buttons/ripple"
-
+import { Header } from "@/components/layout/header";
+import { Hero } from "@/components/sections/hero";
+import { Services } from "@/components/sections/services";
 
 export default function Home() {
   return (
-    <div>hello
-      <RippleButton>button</RippleButton>
-      <div className="bg-primary/10 h-20 w-20">card</div>
-    </div>
+    <main className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <Services />
+    </main>
   );
 }
