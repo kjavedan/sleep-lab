@@ -79,8 +79,8 @@ export function Header() {
         {/* Circular background */}
         <div
           className={cn(
-            "absolute top-4 right-6 w-12 h-12 bg-card rounded-full transition-all duration-500 ease-in-out origin-center",
-            mobileMenuOpen ? "scale-[50]" : "scale-0",
+            "absolute inset-0 bg-background/95 backdrop-blur-sm transition-all duration-500 ease-in-out",
+            mobileMenuOpen ? "opacity-100" : "opacity-0",
           )}
         />
 
@@ -98,7 +98,7 @@ export function Header() {
               key={item.name}
               onClick={() => scrollToSection(item.href)}
               className={cn(
-                "text-3xl font-heading font-bold text-card-foreground hover:text-primary transition-all duration-300 relative z-50",
+                "text-3xl font-heading font-bold text-foreground hover:text-primary transition-all duration-300 relative z-50",
                 mobileMenuOpen ? "animate-in slide-in-from-bottom-4" : "",
               )}
               style={{
