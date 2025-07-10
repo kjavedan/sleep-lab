@@ -32,7 +32,7 @@ export function Header() {
         <div className="flex h-16 lg:h-20 items-center justify-between">
           {/* Logo */}
           <a className="flex items-center " href="#home">
-              <Image src={'/logo.png'} alt="logo" width={40} height={40}/>
+            <Image src={"/logo.png"} alt="logo" width={40} height={40} />
           </a>
 
           {/* Desktop Navigation */}
@@ -79,8 +79,8 @@ export function Header() {
         {/* Circular background */}
         <div
           className={cn(
-            "absolute top-4 right-6 w-12 h-12 bg-card rounded-full transition-all duration-500 ease-in-out",
-            mobileMenuOpen ? "scale-[100] transform-gpu" : "scale-0",
+            "absolute top-4 right-6 w-12 h-12 bg-card rounded-full transition-all duration-500 ease-in-out origin-center",
+            mobileMenuOpen ? "scale-[50]" : "scale-0",
           )}
         />
 
@@ -98,7 +98,7 @@ export function Header() {
               key={item.name}
               onClick={() => scrollToSection(item.href)}
               className={cn(
-                "text-3xl font-heading font-bold text-foreground hover:text-primary transition-all duration-300",
+                "text-3xl font-heading font-bold text-card-foreground hover:text-primary transition-all duration-300 relative z-50",
                 mobileMenuOpen ? "animate-in slide-in-from-bottom-4" : "",
               )}
               style={{
@@ -113,5 +113,4 @@ export function Header() {
       </div>
     </header>
   );
-
 }
