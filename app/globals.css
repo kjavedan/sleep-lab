@@ -70,24 +70,30 @@
   --radius: 1rem;
 
   /* Sleep Lab Color Palette */
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #171717;
-  --card-foreground: #fafafa;
-  --popover: #171717;
-  --popover-foreground: #fafafa;
-  --primary: #f5e27b;
-  --primary-foreground: #171717;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a1a1a1;
-  --accent: #f5e27b;
-  --accent-foreground: #171717;
-  --destructive: #ef4444;
-  --border: #262626;
-  --input: #171717;
-  --ring: #f5e27b;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.18 0 0);              
+  --card-foreground: oklch(0.98 0 0);   
+  --popover: oklch(0.18 0 0);           
+  --popover-foreground: oklch(0.98 0 0);
+
+  --primary: oklch(0.89 0.18 100);      
+  --primary-foreground: oklch(0.18 0 0);
+
+  --accent: oklch(0.9 0.2 100);       
+  --accent-foreground: oklch(0.18 0 0); 
+
+  --secondary: oklch(0.22 0 0);         
+  --secondary-foreground: oklch(0.98 0 0); 
+  
+  --muted: oklch(0.22 0 0);             
+  --muted-foreground: oklch(0.75 0.01 100); 
+  
+  --destructive: oklch(0.62 0.19 29);   
+
+  --border: oklch(0.22 0 0);            
+  --input: oklch(0.18 0 0);             
+  --ring: oklch(0.89 0.18 100);         
 }
 
 @layer base {
@@ -115,24 +121,7 @@
   }
 
   /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
 
-  ::-webkit-scrollbar-track {
-    background: #262626;
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #f5e27b;
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #f5e27b;
-  }
 
   /* Floating Z animation class */
   .float-z {
@@ -147,11 +136,6 @@
     animation-delay: 1s;
   }
 
-  /* Horizontal scroll containers */
-  .horizontal-scroll {
-    scrollbar-width: thin;
-    scrollbar-color: #f5e27b #262626;
-  }
 
   /* Hide scrollbar for mobile horizontal scroll */
   .no-scrollbar {

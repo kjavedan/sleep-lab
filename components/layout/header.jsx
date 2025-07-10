@@ -31,13 +31,9 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
         <div className="flex h-16 lg:h-20 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="w-12 h-12 lg:w-20 lg:h-20 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-lg lg:text-2xl">
-                SL
-              </span>
-            </div>
-          </div>
+          <a className="flex items-center " href="#home">
+              <Image src={'/logo.png'} alt="logo" width={40} height={40}/>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-12">
@@ -63,7 +59,7 @@ export function Header() {
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-8 w-8" />
               )}
               <span className="sr-only">Toggle navigation</span>
             </Button>
@@ -117,4 +113,5 @@ export function Header() {
       </div>
     </header>
   );
+
 }
