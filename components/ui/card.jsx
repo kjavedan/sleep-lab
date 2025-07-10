@@ -1,12 +1,24 @@
 import { cn } from "@/lib/utils";
 
-export function Card({ className, ...props }) {
+export function Card({ className, variant = "default", ...props }) {
+  const cardVariants = {
+    default:
+      "rounded-2xl bg-card border border-border p-4 shadow-lg transition-all hover:shadow-xl cursor-pointer min-w-80",
+    coaching:
+      "rounded-[32px] p-4 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] transition-all hover:shadow-xl cursor-pointer flex flex-col md:flex-row gap-4 items-start",
+  };
+
+  const backgroundStyle =
+    variant === "coaching"
+      ? {
+          background: "linear-gradient(180deg, #171717 0%, #1D1D1D 100%)",
+        }
+      : {};
+
   return (
     <div
-      className={cn(
-        "rounded-2xl bg-card border border-border p-4 shadow-lg transition-all hover:shadow-xl cursor-pointer min-w-80",
-        className,
-      )}
+      className={cn(cardVariants[variant], className)}
+      style={backgroundStyle}
       {...props}
     />
   );
