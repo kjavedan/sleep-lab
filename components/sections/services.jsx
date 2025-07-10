@@ -16,16 +16,16 @@ const services = [
     id: 1,
     title: "One on One Sleep Coaching",
     description:
-      "Customized sleep programs with tools, resources, and one-on-one support. I'll help interpret your sleep data and guide you to optimal sleep quality.",
-    image: "/api/placeholder/400/300",
+      "I'll look at your sleep data, then give you a custom plan, the right tools, and personal support to help you sleep better.",
+    image: "/one-on-one.png",
     imageAlt: "One on One Sleep Coaching",
   },
   {
     id: 2,
     title: "Couples Sleep Coaching",
     description:
-      "Most couples struggle to sleep well together, one always ends up sacrificing sleep. With my couples sleep coaching, I help you understand what's happening at night and improve sleep for both partners based on their individual needs.",
-    image: "/api/placeholder/400/300",
+      "Most couples struggle to sleep well together—one always ends up sacrificing sleep. With my couples sleep coaching, I help you understand what's happening at night and improve sleep for both partners based on their individual needs.",
+    image: "/couples.png",
     imageAlt: "Couples Sleep Coaching",
   },
   {
@@ -33,7 +33,7 @@ const services = [
     title: "Group Sleep Coaching",
     description:
       "A more fun and accessible way to get the sleep coaching you need. You'll connect with others facing the same struggles in a supportive community full of motivation and accountability.",
-    image: "/api/placeholder/400/300",
+    image: "/group.png",
     imageAlt: "Group Sleep Coaching",
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: "Sleep to thrive",
     description:
       "Are you a company that truly cares about your team? My program helps your staff become more focused, productive, and energized—by teaching them to sleep like cavemen. Boost performance, profit, and create a workplace full of healthier, happier people.",
-    image: "/api/placeholder/400/300",
+    image: "/staff.png",
     imageAlt: "Sleep to thrive",
   },
   {
@@ -49,7 +49,7 @@ const services = [
     title: "Companies Sleep Coaching",
     description:
       "Optimize your sleep with a my online video course. I'll provide you with all the necessary tools, resources so you can do it yourself and improve your sleep in a more cost-effective way.",
-    image: "/api/placeholder/400/300",
+    image: "/running.png",
     imageAlt: "Companies Sleep Coaching",
   },
 ];
@@ -64,32 +64,68 @@ export function Services() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          {services.slice(0, 1).map((service, index) => (
             <Card
               key={service.id}
-              className={`group transition-all duration-300 ${
-                index === 2 ? "md:col-span-2 xl:col-span-1" : ""
-              } ${index >= 3 ? "md:col-span-1 xl:col-span-1" : ""}`}
+              variant="coaching"
+              className="col-span-1 lg:col-span-2 xl:col-span-3 max-w-4xl mx-auto group transition-all duration-300"
+            >
+              {/* Image Section */}
+              <div className="flex-shrink-0">
+                <div className="relative w-full md:w-64 h-44 overflow-hidden rounded-3xl">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="flex flex-col flex-1 justify-between py-4">
+                <div className="space-y-4">
+                  <CardTitle className="text-white text-2xl font-bold font-[Playpen_Sans] leading-[130.4%]">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-[#9B9B9B] text-base font-[Lato] leading-[130%] line-clamp-3">
+                    {service.description}
+                  </CardDescription>
+                </div>
+
+                <div className="mt-6">
+                  <Button
+                    size="sm"
+                    className="bg-[#F5E27B] text-[#171717] hover:bg-yellow-500 px-8 py-4 rounded-full font-[Playpen_Sans]"
+                    onClick={() => {
+                      const element = document.querySelector("#contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    Start Now
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          ))}
+
+          {/* Other services in regular grid */}
+          {services.slice(1).map((service, index) => (
+            <Card
+              key={service.id}
+              className={`group transition-all duration-300`}
             >
               <CardHeader className="p-0">
                 <div className="relative w-full h-48 lg:h-56 overflow-hidden rounded-t-2xl">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-muted/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto mb-4 rounded-full bg-primary/30 flex items-center justify-center">
-                        <span className="text-2xl lg:text-3xl">
-                          {index === 0 && "👤"}
-                          {index === 1 && "💑"}
-                          {index === 2 && "👥"}
-                          {index === 3 && "🏢"}
-                          {index === 4 && "🎯"}
-                        </span>
-                      </div>
-                      <p className="text-xs lg:text-sm text-muted-foreground font-heading">
-                        {service.title}
-                      </p>
-                    </div>
-                  </div>
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </CardHeader>
 
