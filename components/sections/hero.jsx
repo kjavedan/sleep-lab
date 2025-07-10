@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { RippleButton } from "../animate-ui/buttons/ripple";
 
 function FloatingZ({ delay = 0 }) {
   return (
@@ -42,13 +43,13 @@ export function Hero() {
                 energized every day.
               </p>
             </div>
-            <Button
+            <RippleButton
               onClick={scrollToServices}
               size="default"
               className="text-lg lg:text-xl"
             >
               Start Now
-            </Button>
+            </RippleButton>
           </div>
 
           {/* Right Content - Hero Image with Floating Z's */}
