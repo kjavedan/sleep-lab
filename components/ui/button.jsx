@@ -5,11 +5,12 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "font-heading font-normal rounded-2xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring shadow-lg hover:shadow-xl cursor-pointer",
+  "font-heading font-normal rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring shadow-lg hover:shadow-xl cursor-pointer",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default:
+          "bg-primary text-primary-foreground hover:bg-yellow-500 hover:shadow-2xl",
         outline:
           "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
         ghost:
